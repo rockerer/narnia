@@ -56,10 +56,30 @@ Fine, seems like it worked! Now we cat the password for the next level
 
 ### Lessons learned:
 
-Use ``cat'' to pass the input into the opened shell.
+Use ``cat'' to pass the input into the opened shell. This will be used in
+many more cases.
 
 
 ## Level 1:
 
 Username: narnia1
-Passwort: efeidiedae
+Passwort: [ efeidiedae ]
+
+A quick peek in the source code shows, that the env var EGG has to be set.
+Setting the var to commands like **ls** or **/bin/sh** results in a segfault.
+This cries for runnable shellcode to be used.  We will use a shells-script from
+a page liek shell-storm. At this moment i'm not capable of writing my own
+shell-script from scratch without destroying everything.
+
+Since we want a simple execve to bash i used the following script
+    http://shell-storm.org/shellcode/files/shellcode-606.php
+save the shellcode without the quotation marks and linebreaks in
+a file **shellcode.comp**, upload it via scp and just pass it to EGG via echo:
+    export EGG=$(echo -e $(cat shellcode.comp))
+
+Now i can run ./narnia1, get the credentials for narnia2  and be happy
+
+## Level 2:
+
+Username: narnia1
+Passwort: [ nairiepecu ]
