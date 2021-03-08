@@ -13,7 +13,7 @@ into the ssh config file:
 ## Level 0:
 
 Username: narnia0
-Passwort: narnia0
+Passwort: [ narnia0 ]
 
 The file ist stored in the directory /narnia, the application
 is named narnia0, the source code is given in the file narnia0.c.
