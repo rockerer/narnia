@@ -83,3 +83,9 @@ Now i can run ./narnia1, get the credentials for narnia2  and be happy
 
 Username: narnia1
 Passwort: [ nairiepecu ]
+
+The vulnerability is hidden in the strcpy and the size of 128 for the target
+buffer. By copying more than 128 bytes the return adress can be modified
+
+Using gdb and the python script **findLocation.py** finds the position of the 
+return adress.
