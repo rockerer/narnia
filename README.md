@@ -3,6 +3,14 @@
 ## Introduction:
 Try it for yourself before you look for help ;)
 
+## Usefule information
+
+The applicatoins are compiled with the following flags:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro 
+
 ## Preparations
 I added the server ``narnia.labs.overthewire.org'' and port 2226
 into the ssh config file:
